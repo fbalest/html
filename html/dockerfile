@@ -1,0 +1,10 @@
+FROM nginx:latest
+
+# Copia il file di configurazione nel percorso corretto
+COPY default.conf /etc/nginx/conf.d/default.conf
+
+# Copia i file HTML nella directory predefinita di Nginx
+COPY /pippo/index.html /usr/share/nginx/html/pippo/
+
+# Esponi la porta 8080
+EXPOSE 8080
